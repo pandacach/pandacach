@@ -1,0 +1,16 @@
+﻿<Window x:Class="FacturacionVentasWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FacturacionVentasWPF"
+        mc:Ignorable="d"
+        Title="Software CACH- Empresarial" Height="581" Width="800" Closing="Window_Closing" WindowStyle="None">
+    <Grid Margin="0,0,0,-6">
+        <Label Content="Software Manejo de Ventas e Informacion" HorizontalAlignment="Center" Margin="0,59,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Btn_ModuloVentas" Content="Modulo de Ventas" HorizontalAlignment="Left" Margin="90,133,0,0" VerticalAlignment="Top" Width="628" Height="84" Click="Btn_ModuloVentas_Click"/>
+        <Button x:Name="Btn_ModuloInformacion" Content="Modulo de Informacion Clientes" HorizontalAlignment="Left" Margin="90,233,0,0" VerticalAlignment="Top" Width="628" Height="84" Click="Btn_ModuloInformacion_Click"/>
+        <Button x:Name="Btn_ModuloProdyCat" Content="Modulo de Productos y Categorias" HorizontalAlignment="Left" Margin="90,333,0,0" VerticalAlignment="Top" Width="628" Height="84" Click="Btn_ModuloProdyCat_Click"/>
+        <Button x:Name="Btn_CerrarApp" Content="Cerrar Aplicacion" HorizontalAlignment="Left" Margin="90,433,0,0" VerticalAlignment="Top" Width="628" Height="84" Click="Btn_CerrarApp_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,74 @@
+﻿<Window x:Class="FacturacionVentasWPF.ModuloManejoInformacion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FacturacionVentasWPF"
+        mc:Ignorable="d"
+        Title="Manejo Informacion Clientes" Height="673" Width="773" Closing="Window_Closing" WindowStyle="None">
+
+
+    <TabControl>
+
+        <TabItem Header="Registro Clientes">
+            <Grid Background="#FFE5E5E5" Height="628">
+                <TextBox x:Name="Txt_id" HorizontalAlignment="Left" Margin="270,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Height="28" PreviewTextInput="Txt_id_PreviewTextInput"/>
+                <Label Content="Id" HorizontalAlignment="Left" Margin="140,20,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="Txt_NombreCliente" HorizontalAlignment="Left" Margin="270,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Height="28" PreviewTextInput="Txt_NombreCliente_PreviewTextInput"/>
+                <Label Content="Nombre Completo" HorizontalAlignment="Left" Margin="140,60,0,0" VerticalAlignment="Top"/>
+                <Label Content="Tipo de Identificacion" HorizontalAlignment="Left" Margin="140,100,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="Cmb_TipoId" HorizontalAlignment="Left" Margin="270,100,0,0" VerticalAlignment="Top" Width="148" Height="26">
+                    <ComboBoxItem Content="Cedula de  Ciudadania"/>
+                    <ComboBoxItem Content="Cedula de Extranjeria"/>
+                    <ComboBoxItem Content="Pasaporte"/>
+                </ComboBox>
+                <TextBox x:Name="Txt_Identificacion" HorizontalAlignment="Left" Margin="270,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Height="28" PreviewTextInput="Txt_Identificacion_PreviewTextInput"/>
+                <Label Content="Identificacion" HorizontalAlignment="Left" Margin="140,140,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="Txt_Correo" HorizontalAlignment="Left" Margin="270,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Height="28"/>
+                <Label Content="Correo" HorizontalAlignment="Left" Margin="140,180,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="Txt_Telefono" HorizontalAlignment="Left" Margin="270,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Height="28" TextChanged="Txt_Telefono_TextChanged" PreviewTextInput="Txt_Telefono_PreviewTextInput"/>
+                <Label Content="Telefono" HorizontalAlignment="Left" Margin="140,220,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="Txt_Direccion" HorizontalAlignment="Left" Margin="270,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Height="28"/>
+                <Label Content="Direccion" HorizontalAlignment="Left" Margin="140,260,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="Txt_CapCredito" HorizontalAlignment="Left" Margin="270,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Height="28" PreviewTextInput="Txt_CapCredito_PreviewTextInput" MaxLines="1" MaxLength="8"/>
+                <Label Content="Capacidad de Credito" HorizontalAlignment="Left" Margin="140,300,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="Btn_RegistrarCliente" Content="Registrar Cliente" HorizontalAlignment="Left" Margin="31,360,0,0" VerticalAlignment="Top" Width="335" Height="30" Click="Btn_RegistrarCliente_Click"/>
+                <Button x:Name="Btn_BackToMain" Content="Regresar Menu Inicial" HorizontalAlignment="Left" Margin="384,360,0,0" VerticalAlignment="Top" Width="364" Height="30" Click="Btn_BackToMain_Click"/>
+                <Button x:Name="Btn_CerrarApp" Content="Cerrar Aplicacion" HorizontalAlignment="Left" Margin="31,413,0,0" VerticalAlignment="Top" Width="717" Height="73" Click="Btn_CerrarApp_Click"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Consulta Clientes">
+            <Grid x:Name="Rbtn" Background="#FFE5E5E5" Height="711">
+                <Button x:Name="Btn_BusquedaCliente" Content="Buscar Cliente" HorizontalAlignment="Left" Margin="40,48,0,0" VerticalAlignment="Top" Width="664" Height="38" Click="Btn_BusquedaCliente_Click"/>
+                <RadioButton x:Name="Rbtn_Id" Content="Id" HorizontalAlignment="Left" Margin="60,107,0,0" VerticalAlignment="Top" Click="Rbtn_BusqIdentificacion_Click"/>
+                <RadioButton x:Name="Rbtn_Identificacion" Content="Identificacion" HorizontalAlignment="Left" Margin="309,107,0,0" VerticalAlignment="Top" Click="Rbtn_Pasaporte_Click"/>
+                <RadioButton x:Name="Rbtn_TodosRegistros" Content="Todos los registros" HorizontalAlignment="Left" Margin="460,107,0,0" VerticalAlignment="Top" Click="Rbtn_TodosRegistros_Click"/>
+                <TextBox x:Name="Txt_IdSearch" HorizontalAlignment="Left" Margin="191,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="455" Height="28" PreviewTextInput="Txt_IdSearch_PreviewTextInput"/>
+                <Button x:Name="Btn_BackToPpal" Content="Volver a Inicio" HorizontalAlignment="Left" Margin="25,530,0,0" VerticalAlignment="Top" Width="720" Height="70" Click="Btn_BackToPpal_Click"/>
+                <Button x:Name="Btn_Cerrar" Content="Cerrar App" HorizontalAlignment="Left" Margin="25,622,0,0" VerticalAlignment="Top" Width="720" Height="70"/>
+                <DataGrid x:Name="DgViewClientes" Margin="0,171,0,425"/>
+                <TextBlock x:Name="Txt_Block_ResBusq" HorizontalAlignment="Left" Margin="10,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="735" Height="90"/>
+                <Label Content="Ingrese Numero Documento:" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top"/>
+                <TextBlock x:Name="Txt_Block_Busqueda" HorizontalAlignment="Left" Margin="40,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="664" Height="72"/>
+
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="Actualizar Informacion Cliente">
+            <Grid Height="808">
+                <Label Content="Ingrese Identificacion del Cliente" HorizontalAlignment="Left" Margin="37,24,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="Txt_IdUpdate" HorizontalAlignment="Left" Margin="225,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="159,861,0,0" VerticalAlignment="Top"/>
+
+            </Grid>
+
+        </TabItem>
+        <TabItem Header="Borrar Registro Clientes">
+            <Grid>
+                <Label Content="Ingrese Identificacion del Cliente:" HorizontalAlignment="Left" Margin="37,24,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="Txt_IdBorrar" HorizontalAlignment="Left" Margin="225,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" Height="26"/>
+                <Button x:Name="Btn_BorrarRegistro" Content="Borrar Registro" HorizontalAlignment="Left" Margin="225,71,0,0" VerticalAlignment="Top" Width="284" Height="28" Click="Btn_BorrarRegistro_Click"/>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>
